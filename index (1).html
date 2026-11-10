@@ -59,6 +59,8 @@ input:focus{outline:2px solid var(--gold);border-color:var(--gold)}
 .err{color:#a3321f;font-size:14px;margin-top:8px;min-height:20px}
 .card p{margin:6px 0 14px}.card p:last-child{margin-bottom:0}
 .ins{padding:26px 22px;margin-top:30px}.ins b{font-size:25px;line-height:1.15;display:block;margin-bottom:12px}.ins p{font-size:18px}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:#fff}
 .scan{margin:12px 0;font-weight:500;animation:in .5s both;animation-delay:calc(var(--d)*.9s)}
 #sb{transition:width 3.6s linear}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
@@ -143,66 +145,89 @@ attachment:{ic:ic.heart,name:"attachment style",
   {i:"Almost there. Patterns can change.",b:"People move toward secure attachment through awareness, safe relationships and small daily practice. Your report shows where to start."}]},
 resilience:{ic:ic.wave,name:"emotional resilience",bl:"Emotional resilience",
   title:"What’s your emotional resilience score?",
-  sub:"10 quick questions about how you handle stress, setbacks and big feelings.",
+  sub:"15 questions about how you handle stress, setbacks and big feelings.",
   qs:[
-  ["After a setback, I find my footing within a few days."],
+  {t:"After a setback, how long does it usually take you to find your footing?",o:[["A day or two","s5"],["About a week","s4"],["A few weeks","s2"],["I’m not sure I ever fully do","s1"]]},
   ["Small problems feel like the end of the world.",1],
   ["When I’m upset, I can calm my body down."],
+  {t:"When stress hits, my body usually…",o:[["Tightens, but I can breathe through it","s4"],["Races and I can’t switch off","s1"],["Goes numb or exhausted","s2"],["Stays steady while I notice it and act","s5"]]},
+  {i:"Resilience is a skill, not a trait.",b:"Strong people aren’t the ones who never fall apart. They recover faster because they have practised noticing, calming and choosing, and every one of those can be trained."},
   ["I stay stuck replaying what went wrong.",1],
+  {t:"When you make a mistake in front of people, you…",o:[["Own it, fix it and move on","s5"],["Cringe about it for days","s2"],["Blame circumstances or other people","s3"],["Shut down and avoid the situation","s1"]]},
   ["I can ask for help when I need it."],
   ["Stress shows up in my body: tight chest, poor sleep, racing mind.",1],
+  {t:"When someone criticises you, you usually…",o:[["Listen, take what is useful and leave the rest","s5"],["Defend myself straight away","s3"],["Feel crushed and doubt myself","s1"],["Pretend it didn’t bother me, then stew","s2"]]},
   ["I can feel a hard emotion without being swept away."],
+  {i:"Your nervous system has three gears.",b:"Calm and connected, fight or flight, and shutdown. Resilience means noticing which gear you are in and having a reliable way back to calm, such as slow breathing or a short countdown relaxation."},
   ["I snap at people when I’m overwhelmed.",1],
-  ["I bounce back after rejection or disappointment."],
+  {t:"How do you usually reset after a hard day?",o:[["Something that calms my body: a walk, prayer, stretching, breathing","s5"],["Talk it through with someone I trust","s4"],["Scroll, snack or watch TV until I’m numb","s2"],["I don’t. I carry it into tomorrow","s1"]]},
   ["I believe I can get through difficult seasons."]],
-  lv:[[70,"Strong","You recover well and stay fairly steady under pressure. Your work is protecting that strength when life piles on."],
-      [40,"Building","You have real resilience, and it gets stretched when stress stacks up. A few daily practices can raise it quickly."],
-      [0,"Stretched","Right now your system is carrying a lot. That is a signal, not a flaw, and resilience is a skill you can rebuild."]]},
+  lv:[[70,"Strong","You recover well and stay fairly steady under pressure. Your work is protecting that strength when life piles on.","You notice your feelings, recover well, and other people lean on your steadiness.","You can carry too much alone, and rest may feel like laziness rather than maintenance.","Schedule one proper reset this week, ten minutes with nothing to fix, and treat it as non-negotiable."],
+      [40,"Building","You have real resilience, and it gets stretched when stress stacks up. A few daily practices can raise it quickly.","You already have recovery skills and the willingness to use them.","When stress stacks up, your calming tools get dropped first, which is exactly when you need them.","Pick one two-minute calming practice, such as the 5 to 1 countdown, and do it at the same time every day, before you need it."],
+      [0,"Stretched","Right now your system is carrying a lot. That is a signal, not a flaw, and resilience is a skill you can rebuild.","You care deeply and you have kept going, which takes real strength.","Your system is running on empty, so small things feel huge and recovery feels out of reach.","Lower the bar: one small act of rest or support today, such as a walk, a call or a proper meal, and build from there."]]},
 beliefs:{ic:ic.bub,name:"relationship beliefs",bl:"Limiting relationship beliefs",
   title:"What beliefs are shaping your love life?",
-  sub:"8 questions about the hidden rules you carry into every relationship.",
+  sub:"14 questions about the hidden rules you carry into every relationship.",
   qs:[
+  {t:"Your partner says they need a weekend alone. What goes through your mind?",o:[["They need space. It isn’t about me","s1"],["Maybe they’re losing interest","s5"],["I must have done something wrong","s4"],["Honestly, I could use space too","s2"]]},
   ["Love means someone has to complete me."],
   ["If I show my real self, people will leave."],
+  {i:"Beliefs are rules you learned, not facts.",b:"Most of us absorbed our rules about love before we could question them, from family, culture, church and early relationships. Rules can be examined and rewritten."},
+  {t:"When a relationship starts going well, I…",o:[["Relax and enjoy it","s1"],["Wait for something to go wrong","s5"],["Work harder to keep it perfect","s4"],["Find a reason to pull away","s4"]]},
   ["I always end up with the wrong people."],
   ["If someone needs space, it means they don’t love me."],
+  {t:"Which sentence feels most true deep down?",o:[["I am worthy of love as I am","s1"],["I am loved when I’m useful or perfect","s5"],["Love always costs me something","s4"],["People can’t really be trusted","s5"]]},
   ["I have to earn love by being useful or perfect."],
+  {i:"Your beliefs choose your partners.",b:"A belief like “love has to be earned” quietly picks people who make you earn it, then proves itself right. Change the belief and different people start to look attractive."},
   ["Conflict means the relationship is failing."],
+  {t:"After an argument, I usually believe…",o:[["We can repair this and be closer","s1"],["It’s my fault","s4"],["It’s their fault","s3"],["This is the beginning of the end","s5"]]},
   ["I can trust my judgment about who is safe for me.",1],
   ["I deserve a love that feels peaceful.",1]],
-  lv:[[65,"Heavy limiting beliefs","Some old rules about love are running your relationships. They were learned, often young, and they can be unlearned."],
-      [35,"Some limiting beliefs","You hold a mix of healthy and limiting beliefs. Under stress, the old rules take over. Naming them takes away their power."],
-      [0,"Mostly healthy beliefs","Your beliefs about love are largely healthy. Your work is spotting the few that still show up when you feel threatened."]]},
+  lv:[[65,"Heavy limiting beliefs","Some old rules about love are running your relationships. They were learned, often young, and they can be unlearned.","You know deeply what you want from love, and you were honest enough to look at your rules.","These beliefs feel like facts, so you may choose, test or push away partners in ways that prove them right.","Write your strongest belief about love, then ask: where did I learn this, and what would I believe if I felt safe?"],
+      [35,"Some limiting beliefs","You hold a mix of healthy and limiting beliefs. Under stress, the old rules take over. Naming them takes away their power.","You already know what a healthy view of love feels like.","Under stress the old rules take over, especially around distance, conflict or being needed.","Next time you feel triggered, finish this sentence out loud: the story I am telling myself is…"],
+      [0,"Mostly healthy beliefs","Your beliefs about love are largely healthy. Your work is spotting the few that still show up when you feel threatened.","Your beliefs give you a steady base for love.","A few old rules can still show up under threat, and you may expect others to find love as easy as you do.","Name one belief you still doubt, and collect three pieces of evidence for the healthier version."]]},
 victim:{ic:ic.cloud,name:"victim mindset",bl:"Victim mindset",
   title:"Are you stuck in a victim story?",
-  sub:"8 honest questions about where you give your power away.",
+  sub:"14 honest questions about where you give your power away.",
   qs:[
+  {t:"Something goes wrong at work and it isn’t clearly your fault. You…",o:[["Look for what I can influence and act on it","s1"],["Feel it’s unfair and wait for others to fix it","s4"],["Tell everyone how unfair it is","s5"],["Quietly give up and do the minimum","s4"]]},
   ["Most of my problems are caused by other people."],
-  ["Nothing I do really changes how things turn out."],
   ["I often think: why does this always happen to me?"],
+  {i:"Being hurt is not the same as being powerless.",b:"Real harm happens, and it deserves to be acknowledged. A victim story begins when we decide the harm is all of who we are, and that nothing we do can change what happens next."},
   ["I can name which part of a conflict was mine.",1],
+  {t:"When I tell the story of a hard time, I mostly talk about…",o:[["What I learned and what I did next","s1"],["What was done to me","s5"],["How unfair it all was","s4"],["I avoid talking about it","s3"]]},
   ["I wait for others to change before I do."],
-  ["I tell the story of what was done to me more than what I am doing about it."],
+  {t:"Someone gives you honest feedback you didn’t ask for. You…",o:[["Consider it, there may be something in it","s1"],["Feel attacked and defend myself","s3"],["Feel hurt and collapse","s4"],["Decide they have no right to say it","s5"]]},
+  ["Nothing I do really changes how things turn out."],
+  {i:"The shift is from “why me?” to “what now?”",b:"Ownership isn’t blame. It means asking what part of this is mine and what one small move is within my control. That question returns your power without denying your pain."},
   ["When things go wrong, I look for what I can change.",1],
-  ["I feel stuck and I can’t see a way out."]],
-  lv:[[65,"Strong victim pattern","You often feel that life is happening to you. That usually grows from real hurt, and it is also where your power gets lost. The shift starts with small acts of ownership."],
-      [35,"Sometimes in the story","You move between ownership and powerlessness, especially under stress. Catching the moment you slip is the first skill."],
-      [0,"Ownership mindset","You tend to see your part and look for what you can change, even when things aren’t fair. Your edge is keeping ownership without self-blame."]]},
+  {t:"If your life is exactly the same a year from now, who is responsible for changing it?",o:[["Me, with support where I need it","s1"],["Mostly me, but others need to change too","s3"],["Other people, they need to treat me better","s5"],["Nobody, it’s just how life is","s5"]]},
+  ["I feel stuck and I can’t see a way out."],
+  {t:"How do you feel about the idea that you can change your situation?",o:[["Hopeful, I’m ready for a step","s1"],["Interested, but scared","s2"],["Annoyed, it feels like blame","s4"],["Hopeless, it’s not that simple","s5"]]}],
+  lv:[[65,"Strong victim pattern","You often feel that life is happening to you. That usually grows from real hurt, and it is also where your power gets lost. The shift starts with small acts of ownership.","You feel things deeply, you have survived real hurt, and you care about fairness.","The story of what happened to you can become a place to hide, which keeps your power out of reach.","Take one problem and write: what part is mine, and what is one small move I control this week? Then make that move."],
+      [35,"Sometimes in the story","You move between ownership and powerlessness, especially under stress. Catching the moment you slip is the first skill.","You can see your part in many situations and you are willing to look honestly.","Under stress you slip into blame or helplessness before you notice.","Catch the phrase “why does this always happen to me” this week and replace it with “what can I do now?”"],
+      [0,"Ownership mindset","You tend to see your part and look for what you can change, even when things aren’t fair. Your edge is keeping ownership without self-blame.","You look for what you can change and you act, even when things are unfair.","Ownership can tip into self-blame, or into carrying responsibilities that belong to other people.","Check where you are taking blame that is not yours, and hand it back with kindness."]]},
 habits:{ic:ic.tgt,name:"habits and consistency",bl:"Consistency",
   title:"Why can’t you stay consistent?",
-  sub:"8 questions to find what breaks your habits, and how to fix it.",
+  sub:"14 questions to find what breaks your habits, and how to fix it.",
   qs:[
+  {t:"You promised yourself a new habit starting Monday. By Thursday you…",o:[["Am still going, even if imperfectly","s5"],["Missed a day and quit","s1"],["Am waiting for the next fresh start","s2"],["Barely remember I decided","s1"]]},
   ["I follow through on what I promise myself."],
   ["I start strong and quit within a few weeks.",1],
+  {i:"Consistency comes from identity, not willpower.",b:"People stick to habits that fit who they believe they are. “I am someone who looks after my body” beats “I must go to the gym”. Small proof, repeated, rewrites identity."},
+  {t:"When motivation disappears, I…",o:[["Do the smallest version anyway","s5"],["Wait until I feel like it","s2"],["Promise to make up for it later","s2"],["Drop it completely","s1"]]},
   ["I have a daily routine that keeps me steady."],
   ["One missed day usually becomes a missed week.",1],
-  ["I can keep going when motivation is gone."],
+  {t:"What most often breaks your habits?",o:[["Stress or emotional low days","s2"],["Being busy or interrupted","s3"],["All-or-nothing thinking","s1"],["Nothing, they hold","s5"]]},
   ["I wait until I feel ready before I begin.",1],
+  {i:"Make it so small you can’t fail.",b:"Two minutes done daily beats an hour done twice. Consistency comes first and intensity can grow later, because your nervous system trusts what it can repeat safely."},
   ["I review my progress regularly."],
-  ["My daily habits match the person I want to become."]],
-  lv:[[70,"Consistent","You keep your word to yourself most of the time. Your next level is making your habits survive stressful weeks."],
-      [40,"Capable but inconsistent","You can build habits, and something keeps breaking them. Finding that trigger matters more than trying harder."],
-      [0,"Starting over","Your habits keep collapsing, and that is rarely about discipline. Smaller steps and a better system usually fix it."]]}
+  {t:"How do you talk to yourself after you slip?",o:[["Kindly: okay, back to it tomorrow","s5"],["Harshly: I always fail","s1"],["I make excuses","s2"],["I ignore it and hope it passes","s2"]]},
+  ["My daily habits match the person I want to become."],
+  ["I can keep going when motivation is gone."]],
+  lv:[[70,"Consistent","You keep your word to yourself most of the time. Your next level is making your habits survive stressful weeks.","You follow through, and you trust yourself because of it.","Under stress or change your routines can collapse all at once, because they depend on a good rhythm.","Write a minimum version of each habit, the two-minute version, for the days when life gets heavy."],
+      [40,"Capable but inconsistent","You can build habits, and something keeps breaking them. Finding that trigger matters more than trying harder.","You can start and you can build momentum when conditions are right.","A specific trigger, often stress, all-or-nothing thinking or a missed day, keeps undoing you.","Pick one habit, shrink it to two minutes, and attach it to something you already do every day."],
+      [0,"Starting over","Your habits keep collapsing, and that is rarely about discipline. Smaller steps and a better system usually fix it.","You keep trying, which means part of you still believes change is possible.","Big plans and harsh self-talk drain your energy, so each slip feels like proof you can’t do it.","Choose one tiny action for tomorrow, so small you can’t fail, and do it before you check your phone."]]}
 };
 
 const ATT={
@@ -295,17 +320,22 @@ function score(){
   const avg=k=>{const a=T[k]||[3];return a.reduce((s,v)=>s+v,0)/a.length};
   if(key!=="attachment"){
     const pct=Math.round((avg("s")-1)/4*100),lv=q.lv.find(l=>pct>=l[0]);
-    return{label:lv[1]+" ("+pct+"%)",big:pct+"%",head:lv[1],text:lv[2],bars:[[q.bl,pct]],pct};
+    return{label:lv[1]+" ("+pct+"%)",big:pct+"%",head:lv[1],text:lv[2],str:lv[3],blind:lv[4],step:lv[5],bars:[[q.bl,pct]],pct};
   }
   const an=avg("a"),av=avg("v"),st=an>=3?(av>=3?"fearful":"anxious"):(av>=3?"avoidant":"secure"),pc=v=>Math.round((v-1)/4*100),r=ATT[st];
   return{label:r[0],big:r[0],head:"",text:r[1],str:r[2],blind:r[3],step:r[4],bars:[["Anxiety in relationships",pc(an)],["Avoidance of closeness",pc(av)]],pct:null};
 }
 
+function detail(){
+  const L=[];
+  quiz().qs.map(norm).forEach((x,j)=>{if(x.i||A[j]===undefined)return;L.push(x.t+" → "+(x.o?x.o[A[j]][0]:SC[A[j]-1]))});
+  return L.join(" | ");
+}
 function result(name,email,consent){
-  const r=score();
-  const payload={time:new Date().toISOString(),quiz:key,source:src,name,email,consent,gender:G[0]||"",focus:G[1]||"",age:G[2]||"",result:r.label,answers:A.map(x=>x===undefined?0:x).join(",")};
+  const r=score(),id=Math.random().toString(36).slice(2,10);
+  const payload={time:new Date().toISOString(),quiz:key,source:src,name,email,consent,gender:G[0]||"",focus:G[1]||"",age:G[2]||"",result:r.label,id,detail:detail(),answers:A.map(x=>x===undefined?0:x).join(",")};
   if(CFG.endpoint){fetch(CFG.endpoint,{method:"POST",mode:"no-cors",headers:{"Content-Type":"text/plain"},body:JSON.stringify(payload)}).catch(()=>{})}
-  const msg=`Hi Coach Kay, I’m ${name}. I took the Inner Works ${quiz().name} quiz and my result was: ${r.label}. Please send me my full report.`;
+  const msg=`Hi Coach Kay, I’m ${name}. I took the Inner Works ${quiz().name} quiz and my result was: ${r.label}. Please send me my full report. (ref ${id})`;
   const wa=`https://wa.me/${CFG.whatsapp}?text=${encodeURIComponent(msg)}`;
   orb(r.pct!==null?r.pct/100:.7);
   show(`<p class="sub" style="margin-bottom:0">${esc(name)}, here is your ${quiz().name} result</p>
@@ -314,10 +344,12 @@ function result(name,email,consent){
   <p style="max-width:46ch">${r.text}</p>
   <div style="margin-top:18px">${r.bars.map(b=>`<div class="meter"><span>${b[0]}<span>${b[1]}%</span></span><div class="bar"><i data-w="${b[1]}"></i></div></div>`).join("")}</div>
   ${r.str?`<div class="card"><b>Your strength</b><p>${r.str}</p><b>Your blind spot</b><p>${r.blind}</p><b>Your first step</b><p>${r.step}</p></div>`:""}
-  <div class="card"><b>Your full report is ready.</b>
-  <p>It covers what is behind this pattern, how it shows up for you, and your first steps. It also starts a free 3-day Inner Works trial, with daily prompts and a private community invite.</p>
-  <a class="btn wa" href="${wa}" target="_blank" rel="noopener">Get my report on WhatsApp</a></div>
-  <p class="note">We will also email it to ${esc(email)}. This quiz is a self-reflection tool, not a diagnosis.</p>
+  <div class="card"><b>Your full report is on its way.</b>
+  <p>Your first report is on its way to ${esc(email)}. This is only the start: continue on Telegram for your free 3-day trial, where your guide talks it through with you and builds your full personal plan.</p>
+  ${CFG.bot?`<a class="btn" href="https://t.me/${CFG.bot}?start=${id}" style="display:block;text-align:center;margin-bottom:12px">Start my free 3-day trial</a>`:""}
+  ${CFG.pay?`<a class="btn ghost" href="${CFG.pay}?plan=call&ref=${id}" style="display:block;text-align:center;margin-bottom:12px">Book a 1:1 call with Coach Kay · $5</a>`:""}
+  <a class="btn wa" href="${wa}" target="_blank" rel="noopener">Message Coach Kay on WhatsApp</a></div>
+  <p class="note">Check your spam folder if the email does not arrive within a few minutes. This quiz is a self-reflection tool, not a diagnosis.</p>
   <p class="alt"><a href="?v=${encodeURIComponent(src)}">Take another quiz</a></p>`);
   setTimeout(()=>document.querySelectorAll(".bar i[data-w]").forEach(b=>b.style.width=b.dataset.w+"%"),150);
 }

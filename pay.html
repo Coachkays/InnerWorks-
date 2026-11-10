@@ -34,19 +34,19 @@ li{margin:8px 0}
 <div class="orb"></div>
 <div class="wrap">
   <div class="brand">Inner Works</div>
-  <h1>Join the 21-day Inner Works plan.</h1>
-  <p class="sub">$7 for all 21 days, plus a free consultation call with Coach Kay at the end.</p>
+  <h1 id="h">Join the 21-day Inner Works plan.</h1>
+  <p class="sub" id="sb">$7 for all 21 days, plus your full personal report and a free consultation call with Coach Kay at the end.</p>
 
   <div class="card">
     <h2>Pay with EcoCash</h2>
     <ol>
       <li>Tap the button below. Your phone’s dialer opens with the code ready.</li>
-      <li>Press call, then follow the EcoCash prompts and enter the amount: <b>$7</b>.</li>
+      <li>Press call, then follow the EcoCash prompts and enter the amount: <b id="amt">$7</b>.</li>
       <li>Before you confirm, check the account name EcoCash shows.</li>
       <li>Come back here and tap the green button to send us your payment confirmation.</li>
     </ol>
     <div class="gap"></div>
-    <a class="btn" href="tel:*153*1*1*0774438181%23">Pay $7 with EcoCash</a>
+    <a class="btn" href="tel:*153*1*1*0774438181%23" id="pb">Pay $7 with EcoCash</a>
     <div class="gap"></div>
     <p class="note">Button not opening the dialer? Copy the code and dial it yourself:</p>
     <div class="code" id="code">*153*1*1*0774438181#</div>
@@ -55,7 +55,7 @@ li{margin:8px 0}
 
   <div class="card">
     <h2>I have paid</h2>
-    <p style="margin-bottom:14px">Send your EcoCash confirmation message on WhatsApp, and your plan unlocks the next morning.</p>
+    <p style="margin-bottom:14px">Send your EcoCash confirmation message on WhatsApp. For the 21-day plan, the next day unlocks the following morning. For a call, we will agree a time.</p>
     <a class="btn wa" id="wa" href="#" target="_blank" rel="noopener">Send my payment confirmation</a>
   </div>
 
@@ -63,7 +63,15 @@ li{margin:8px 0}
 </div>
 <script>
 const WHATSAPP="263719606156";
-const msg="Hi Coach Kay, I have paid $7 for the Inner Works 21-day plan. My name is: ";
+const Q=new URLSearchParams(location.search),call=Q.get("plan")==="call",ref=Q.get("ref")||"";
+if(call){
+  document.getElementById("h").textContent="Book your 1:1 call with Coach Kay.";
+  document.getElementById("sb").textContent="$5 for a one-to-one consultation call. Pay, send your confirmation, and we will agree a time.";
+  document.getElementById("amt").textContent="$5";
+  document.getElementById("pb").textContent="Pay $5 with EcoCash";
+  document.title="Inner Works | Book a 1:1 call";
+}
+const msg="Hi Coach Kay, I have paid "+(call?"$5 for a 1:1 consultation call":"$7 for the Inner Works 21-day plan")+(ref?" (ref "+ref+")":"")+". My name is: ";
 document.getElementById("wa").href="https://wa.me/"+WHATSAPP+"?text="+encodeURIComponent(msg);
 document.getElementById("cp").onclick=function(){
   const t=document.getElementById("code").textContent,b=this;
